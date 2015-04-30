@@ -7,6 +7,7 @@
 namespace bigpaulie\fancybox;
 
 use yii\helpers\Json;
+use yii\web\View;
 
 class Widget extends \yii\base\Widget {
     
@@ -37,7 +38,7 @@ class Widget extends \yii\base\Widget {
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
             $js = "jQuery('#{$this->id}').fancybox($options);";
-            $view->registerJs($js);
+            $view->registerJs($js , View::POS_READY);
         }
     }
     
