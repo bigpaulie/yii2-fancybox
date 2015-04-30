@@ -40,7 +40,7 @@ class FancyBox extends Widget {
             echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         } elseif ($this->type == "media") {
             $class = $this->htmlOptions['linkOptions']['class'];
-            $this->htmlOptions['linkOptions']['class'] = 'fancybox-media ' . $class;
+            $this->htmlOptions['linkOptions']['class'] = 'fancybox.media ' . $class;
 
             echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         }
