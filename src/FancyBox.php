@@ -20,7 +20,7 @@ class FancyBox extends Widget {
             // create anchor tag & image tag
             $class = $this->htmlOptions['linkOptions']['class'];
             $this->htmlOptions['linkOptions']['class'] = 'fancybox.image ' . $class;
-            echo Html::a(Html::img($this->item['src'], $this->htmlOptions['imageOptions']) , $this->item['href'] , $this->htmlOptions['linkOptions']);
+            echo Html::a(Html::img($this->item['src'], $this->htmlOptions['imageOptions']), $this->item['href'], $this->htmlOptions['linkOptions']);
         } elseif ($this->type == "inline") {
             $class = $this->htmlOptions['linkOptions']['class'];
             $this->htmlOptions['linkOptions']['class'] = 'fancybox.inline ' . $class;
@@ -36,8 +36,13 @@ class FancyBox extends Widget {
         } elseif ($this->type == "ajax") {
             $class = $this->htmlOptions['linkOptions']['class'];
             $this->htmlOptions['linkOptions']['class'] = 'fancybox.ajax ' . $class;
-            
-            echo Html::a($this->item['text'] , $this->item['href'] , $this->htmlOptions['linkOptions']);
+
+            echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
+        } elseif ($this->type == "media") {
+            $class = $this->htmlOptions['linkOptions']['class'];
+            $this->htmlOptions['linkOptions']['class'] = 'fancybox-media ' . $class;
+
+            echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         }
     }
 
