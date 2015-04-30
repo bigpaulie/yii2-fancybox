@@ -23,6 +23,7 @@ class FancyBoxAsset extends AssetBundle{
         'lib/jquery.mousewheel-3.0.6.pack.js',
         'source/helpers/jquery.fancybox-buttons.js',
         'source/helpers/jquery.fancybox-thumbs.js',
+        'source/helpers/jquery.fancybox-media.js',
     ];
     
     public $depends = [
