@@ -14,11 +14,15 @@ class FancyBoxAsset extends AssetBundle{
     
     public $css = [
         'source/jquery.fancybox.css',
+        'source/helpers/fancybox-buttons.css',
+        'source/helpers/fancybox-thumbs.css',
     ];
     
     public $js = [
         'source/jquery.fancybox.js',
         'lib/jquery.mousewheel-3.0.6.pack.js',
+        'source/helpers/jquery.fancybox-buttons.js',
+        'source/helpers/jquery.fancybox-thumbs.js',
     ];
     
     public $depends = [
