@@ -14,8 +14,8 @@ class FancyBoxAsset extends AssetBundle{
     
     public $css = [
         'source/jquery.fancybox.css',
-        'source/helpers/fancybox-buttons.css',
-        'source/helpers/fancybox-thumbs.css',
+        'source/helpers/jquery.fancybox-buttons.css',
+        'source/helpers/jquery.fancybox-thumbs.css',
     ];
     
     public $js = [
