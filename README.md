@@ -12,12 +12,12 @@ Form more information on how to use FancyBox please go to their website http://f
 
 The preferred way of installing is through composer
 ```
-    composer require --prefer-dist bigpaulie/yii2-fancybox "dev-master"
+    composer require --prefer-dist bigpaulie/yii2-fancybox "1.0.*"
 ```
 
 OR add to composer.json
 ```
-    "bigpaulie/yii2-fancybox": "dev-master"
+    "bigpaulie/yii2-fancybox": "1.0.*"
 ```
 
 
