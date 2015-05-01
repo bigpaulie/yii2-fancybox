@@ -13,34 +13,80 @@ use yii\web\View;
 use bigpaulie\fancybox\FancyBoxAsset;
 use bigpaulie\fancybox\Widget;
 
+/**
+ * FancyBox Widget
+ * This is a single element widget 
+ * @author Paul P <bigpaulie25ro@yahoo.com>
+ */
 class FancyBox extends Widget {
 
+    /**
+     * Run the widget
+     */
     public function run() {
         if ($this->type == "image") {
-            // create anchor tag & image tag
-            $class = $this->htmlOptions['linkOptions']['class'];
-            $this->htmlOptions['linkOptions']['class'] = 'fancybox.image ' . $class;
+            /**
+             * Add the fancybox image type css class
+             */
+            if (isset($this->htmlOptions['linkOptions']['class'])) {
+                $class = $this->htmlOptions['linkOptions']['class'];
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.image ' . $class;
+            } else {
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.image ';
+            }
+            /**
+             * Output the HTML markup
+             */
             echo Html::a(Html::img($this->item['src'], $this->htmlOptions['imageOptions']), $this->item['href'], $this->htmlOptions['linkOptions']);
         } elseif ($this->type == "inline") {
-            $class = $this->htmlOptions['linkOptions']['class'];
-            $this->htmlOptions['linkOptions']['class'] = 'fancybox.inline ' . $class;
+            /**
+             * Add the fancybox inline type css class
+             */
+            if (isset($this->htmlOptions['linkOptions']['class'])) {
+                $class = $this->htmlOptions['linkOptions']['class'];
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.inline ' . $class;
+            } else {
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.inline ';
+            }
+
+
             echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         } elseif ($this->type == "iframe") {
             /**
-             * Add class iframe to the link 
+             * Add the facnybox iframe type css class 
              */
-            $class = $this->htmlOptions['linkOptions']['class'];
-            $this->htmlOptions['linkOptions']['class'] = 'fancybox.iframe ' . $class;
+            if (isset($this->htmlOptions['linkOptions']['class'])) {
+                $class = $this->htmlOptions['linkOptions']['class'];
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.iframe ' . $class;
+            } else {
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.iframe ';
+            }
 
             echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         } elseif ($this->type == "ajax") {
-            $class = $this->htmlOptions['linkOptions']['class'];
-            $this->htmlOptions['linkOptions']['class'] = 'fancybox.ajax ' . $class;
+            /**
+             * Add the fancybox ajax type css class
+             */
+            if (isset($this->htmlOptions['linkOptions']['class'])) {
+                $class = $this->htmlOptions['linkOptions']['class'];
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.ajax ' . $class;
+            } else {
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox.ajax ';
+            }
+
 
             echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         } elseif ($this->type == "media") {
-            $class = $this->htmlOptions['linkOptions']['class'];
-            $this->htmlOptions['linkOptions']['class'] = 'fancybox-media ' . $class;
+            /**
+             * Add the fancybox media type css class
+             */
+            if (isset($this->htmlOptions['linkOptions']['class'])) {
+                $class = $this->htmlOptions['linkOptions']['class'];
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox-media ' . $class;
+            } else {
+                $this->htmlOptions['linkOptions']['class'] = 'fancybox-media ';
+            }
+
 
             echo Html::a($this->item['text'], $this->item['href'], $this->htmlOptions['linkOptions']);
         }
