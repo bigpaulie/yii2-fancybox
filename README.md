@@ -1,7 +1,25 @@
 # yii2-fancybox
-Yii2 FancyBox extension
+Yii2 FancyBox 2 extension
+
+FancyBox is a tool that offers a nice and elegant way to add zooming functionality 
+for images, html content and multi-media on your webpages. 
+It is built on the top of the popular JavaScript framework jQuery and is 
+both easy to implement and a snap to customize. 
 
 Form more information on how to use FancyBox please go to their website http://fancyapps.com/fancybox/
+
+## Install
+
+The preferred way of installing is through composer
+```
+    composer require --prefer-dist bigpaulie/yii2-fancybox "dev-master"
+```
+
+OR add to composer.json
+```
+    "bigpaulie/yii2-fancybox": "dev-master"
+```
+
 
 ## Example usage :
 ### Images
@@ -56,6 +74,11 @@ Form more information on how to use FancyBox please go to their website http://f
         'item' => [
             'href' => 'https://www.youtube.com/watch?v=YE7VzlLtp-4',
             'text' => 'click here',
+        ],
+        'clientOptions' => [
+            'helpers' => [
+                'media' => true,
+            ],
         ],
     ]);
 ```
