@@ -22,6 +22,11 @@ OR add to composer.json
 
 
 ## Example usage :
+
+```php
+    use bigpaulie\fancybox\FancyBox;
+```
+
 ### Images
 ```php
     echo FancyBox::widget([
