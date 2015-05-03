@@ -20,6 +20,17 @@ use bigpaulie\fancybox\Widget;
  */
 class FancyBox extends Widget {
 
+    public function init() {
+        parent::init();
+
+        if (!isset($this->htmlOptions['linkOptions']['id'])) {
+            $this->htmlOptions['linkOptions']['id'] = $this->id;
+        }
+
+        $view = $this->getView();
+        $this->registerScripts($view);
+    }
+
     /**
      * Run the widget
      */

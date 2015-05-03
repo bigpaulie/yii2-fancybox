@@ -20,21 +20,25 @@ class Widget extends \yii\base\Widget {
     public $clientOptions = [];
 
     public function init() {
-        parent::init();
         
+        /**
+         * Assign the widgte id
+         */
         if (empty($this->id)) {
             $this->id = $this->getId();
-        }
-
-        if (!isset($this->htmlOptions['linkOptions']['id'])) {
-            $this->htmlOptions['linkOptions']['id'] = $this->id;
         }
         
         // Register the asset bundle
         $view = $this->getView();
         FancyBoxAsset::register($view);
-        
-        // Register the javascript
+
+    }
+    
+    /**
+     * Register scripts
+     * @param View $view
+     */
+    protected function registerScripts(\yii\web\View $view){
         if ($this->clientOptions !== false) {
             $options = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
             $js = "jQuery('#{$this->id}').fancybox($options);";
